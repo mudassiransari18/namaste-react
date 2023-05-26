@@ -1,16 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// create this type of structure
-{/* <div id="parent">
-    <div id="child">
-        <h1>hii</h1>
-    </div>
-</div> */}
-
-const parent = React.createElement("div", { id: "parent", }, React.createElement("div", { id: "child" }, React.createElement("h1", {}, "Parent-child")));
-
-
-const heading = React.createElement("h2", {id: "heading"}, "Hello World from React");
+const heading = <h1> Hello from JSX</h1>;
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent); 
+
+const TitleComponent = () => {
+    return <p>This is the title</p>
+}
+
+const hello = ( <span> This is span </span> );
+
+const number = 1000;
+const HeaderComponent = () => {
+    return (
+        <div>
+            <TitleComponent />
+            <h3> { number } </h3>
+            { hello }
+            <h1>Hello from component</h1>
+        </div>
+    )
+}
+
+root.render(<HeaderComponent />); 
