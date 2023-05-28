@@ -78,3 +78,21 @@
     4. Hooks can only be called inside of the body of a function component.
     5. useState -- Maintains the state of the component. useState function returns an array with 2 items. Whenever a state variable updates, react will re render the component.
 
+6. Exploring the world
+    1. Monolith vs Microservices
+    2. 2 approcahes for making api calls
+        a. Load page --> Make API call --> Render
+        b. Load page --> Render --> Make API call --> Render
+        For react we use second approach.
+    3. useEffect hook -- 
+        useEffect(()=> {
+            console.log("USE EFFECT CALL");
+        }, []) 
+        The callback function in useEffect will be called after your component renders.
+    4. CORS issue -- Browsers block us to call apis from one origin to another origin
+    5. We cannot update UI using local variables, you will have to use state components.
+    6. Whenever state variables update, react triggers a reconciliation cycle (rerenders the component).
+    7. React compares the old virtual DOM and new virtual DOM using react fiber (reconciliation cycle) and updates the actual DOM only when there is a change. And only the part 
+        that  has changed will be updated. DOM manipulation is very expensive and React is fast in doing this because it checks the virtual DOM.
+    8. 
+

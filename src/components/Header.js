@@ -1,6 +1,9 @@
 import { CDN_URL } from "../utils/constants";
+import { useState } from "react";
 
 export default Header = () => {
+    const [btnName, setBtnName] = useState("Login");
+    console.log(btnName);
     return (
         <div className="header">
             <div className="logoContainer">
@@ -12,6 +15,7 @@ export default Header = () => {
                     <li>About Us</li>
                     <li>Contact Us</li>
                     <li>Cart</li>
+                    <button className="login" onClick={ () => btnName === "Login" ? setBtnName("Logout") : setBtnName("Login") }>{ btnName }</button>
                 </ul>
             </div>
         </div>
