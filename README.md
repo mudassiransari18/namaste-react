@@ -41,4 +41,33 @@
         b. <Title> </Title>
         c. { Title() } since every functional component is a function.
     9. JSX can only have a single parent at root. Else use fragment.
+    10. const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        const TitleComponent = () => {
+            return <p>This is the title</p>
+        }
+
+        const hello = ( <span> This is span </span> );
+
+        const number = 1000;
+        const HeaderComponent = () => {
+            return (
+                <div>
+                    <TitleComponent />
+                    <h3> { number } </h3>
+                    { hello }
+                    <h1>Hello from component</h1>
+                </div>
+            )
+        }
+
+        root.render(<HeaderComponent />); 
+
+4. Talk is cheap, show me the code
+    1. We made some components like 
+        a. AppLayout (Hold entire app like header, body and footer component)
+        b. Header (containing logo and nav links)
+        c. Body (containing search bar and restaurant card container)
+        d. Restaurant card
+    2. Keys should be to uniquely indetify each component from list (Dont use index as kay)
 
