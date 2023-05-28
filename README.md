@@ -71,3 +71,10 @@
         d. Restaurant card
     2. Keys should be to uniquely indetify each component from list (Dont use index as kay)
 
+5. Lets get hooked
+    1. Divide App.js into multiple files.
+    2. Named export is used when you want to export multiple items from file. I can only have 1 default export in a file.
+    3. Hooks are normal JS functions written by React developers.
+    4. Hooks can only be called inside of the body of a function component.
+    5. useState -- Maintains the state of the component. useState function returns an array with 2 items. Whenever a state variable updates, react will re render the component.
+
