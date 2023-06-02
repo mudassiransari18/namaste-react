@@ -17,6 +17,11 @@
 .nav-items ul li {
     padding: 10px;
     margin: 10px;
+    text-decoration: none
+}
+
+.nav-items ul li a {
+    text-decoration: none
 }
 
 .res-card {

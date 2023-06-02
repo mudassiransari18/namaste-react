@@ -69,7 +69,7 @@
         b. Header (containing logo and nav links)
         c. Body (containing search bar and restaurant card container)
         d. Restaurant card
-    2. Keys should be to uniquely indetify each component from list (Dont use index as kay)
+    2. Keys should be to uniquely indetify each component from list (Dont use index as kay). Key should exist on Parent element
 
 5. Lets get hooked
     1. Divide App.js into multiple files.
@@ -77,6 +77,7 @@
     3. Hooks are normal JS functions written by React developers.
     4. Hooks can only be called inside of the body of a function component.
     5. useState -- Maintains the state of the component. useState function returns an array with 2 items. Whenever a state variable updates, react will re render the component.
+    6. Dont create state variables (useState) inside if condition, functions and loops
 
 6. Exploring the world
     1. Monolith vs Microservices
@@ -89,10 +90,18 @@
             console.log("USE EFFECT CALL");
         }, []) 
         The callback function in useEffect will be called after your component renders.
+        The useEffect is called after every render of the component. 
+        1. Everytime a component renders, useEffect will be called if dependency array is not present.
+        2. If we pass an empty dependency array, useEffect will be called only once during page load
+        3. If we pass a dependency in the dependency array, useEffect will be called everytime the dependency is changed.
     4. CORS issue -- Browsers block us to call apis from one origin to another origin
     5. We cannot update UI using local variables, you will have to use state components.
     6. Whenever state variables update, react triggers a reconciliation cycle (rerenders the component).
     7. React compares the old virtual DOM and new virtual DOM using react fiber (reconciliation cycle) and updates the actual DOM only when there is a change. And only the part 
         that  has changed will be updated. DOM manipulation is very expensive and React is fast in doing this because it checks the virtual DOM.
-    8. 
+
+7. Finding the path
+    1. Routing using react-outer-dom. It uses createBrowserRouter and RouterProvider.
+    2. useRouteError hooks gives us more info about error.
+    3. Dynamic routing
 
