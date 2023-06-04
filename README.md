@@ -105,3 +105,8 @@
     2. useRouteError hooks gives us more info about error.
     3. Dynamic routing
 
+8. Lets get classy
+    1. Class based components
+    2. constructor, render, componentDidMount, render, conponentDidUpdate
+    3. Sequence of events
+    4. Child routes
