@@ -110,3 +110,9 @@
     2. constructor, render, componentDidMount, render, conponentDidUpdate
     3. Sequence of events
     4. Child routes
+
+9. Optimizing our app
+    1. Create custom hooks
+    2. Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement in React Hooks (https://stackoverflow.com/questions/53472795/uncaught-error-rendered-fewer-hooks-than-expected-this-may-be-caused-by-an-acc)
+    3. Lazy Loading / Chunking / Code splitting / Dynamic bundling / on Demand Loading / Dynamic import 
+    4. Do not lazy import inside a component, because then the lazy module will be lazily downloaded after every render.
