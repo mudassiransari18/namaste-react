@@ -26,15 +26,17 @@ export default Body = () => {
     }
 
     return !resData.length ? <Shimmer /> : (
-        <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={ (e) => setSearchText(e.target.value) }/>
-                    <button onClick={ () => { setFilteredRestaurantData(filterData(searchText, resData)) }}>Search</button>
+        <div className="mt-3">
+            <div className="flex justify-between bg-purple-100">
+                <div className="flex justify-normal p-5">
+                    <input type="text" placeholder="Search" className="border-lime-600" value={searchText} onChange={ (e) => setSearchText(e.target.value) }/>
+                    <button className="w-16 ml-5 bg-purple-950 hover:bg-purple-700 text-white text-center rounded" onClick={ () => { setFilteredRestaurantData(filterData(searchText, resData)) }}>Search</button>
                 </div>
-                <button className="filter-btn" onClick={() => { setFilteredRestaurantData(resData.filter(restaurant => restaurant.data.avgRating > 4)); }}>Top Rated Restaurnats</button>
+                <div className="p-5">
+                    <button className="w-48 bg-purple-950 text-white text-center rounded" onClick={() => { setFilteredRestaurantData(resData.filter(restaurant => restaurant.data.avgRating > 4)); }}>Top Rated Restaurnats</button>
+                </div>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {filteredRestaurantData.map(res => <RestaurantCard key={res.data.id} resProp={res} />)}
             </div>
         </div>

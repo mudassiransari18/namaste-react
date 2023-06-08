@@ -6,17 +6,17 @@ export default Header = () => {
     const [btnName, setBtnName] = useState("Login");
     console.log(btnName);
     return (
-        <div className="header">
+        <div className="flex justify-between bg-purple-100">
             <div className="logoContainer">
-                <img className="logo" src= { CDN_URL } />
+                <img className="h-28" src= { CDN_URL } />
             </div>
             <div className="nav-items">
-                <ul>
-                    <li><Link to={"/"}>Home</Link></li>
-                    <li><Link to={"/about"}>About Us</Link></li>
-                    <li><Link to={"/contact"}>Contact</Link></li>
-                    <li><Link to={"/instamart"}>Instamart</Link></li>
-                    <button className="login" onClick={ () => btnName === "Login" ? setBtnName("Logout") : setBtnName("Login") }>{ btnName }</button>
+                <ul className="flex py-10">
+                    <li className="px-4"><Link to={"/"}>Home</Link></li>
+                    <li className="px-4"><Link to={"/about"}>About Us</Link></li>
+                    <li className="px-4"><Link to={"/contact"}>Contact</Link></li>
+                    <li className="px-4"><Link to={"/instamart"}>Instamart</Link></li>
+                    <button className="login px-4" onClick={ () => btnName === "Login" ? setBtnName("Logout") : setBtnName("Login") }>{ btnName }</button>
                 </ul>
             </div>
         </div>

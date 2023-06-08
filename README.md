@@ -116,3 +116,7 @@
     2. Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement in React Hooks (https://stackoverflow.com/questions/53472795/uncaught-error-rendered-fewer-hooks-than-expected-this-may-be-caused-by-an-acc)
     3. Lazy Loading / Chunking / Code splitting / Dynamic bundling / on Demand Loading / Dynamic import 
     4. Do not lazy import inside a component, because then the lazy module will be lazily downloaded after every render.
+
+10. Jo Dikhta hai wo bikta hai
+    1. Material UI, ANT UI, Chakra UI, Tailwind, Styled components
+    2. Square bracket notation
