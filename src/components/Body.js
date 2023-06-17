@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { PAGE_LOAD_URL } from "../utils/constants";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 export default Body = () => {
 
@@ -13,6 +14,7 @@ export default Body = () => {
     const [resData, setResData] = useState([]);     // restaurant data from api
     const [searchText, setSearchText] = useState("");   // text added in search bar
     const [filteredRestaurantData, setFilteredRestaurantData] = useState([]);     // filtered restaurant data
+    const { user, setUser } = useContext(UserContext);      // context data 
 
     useEffect(() => {
         getData();
@@ -30,6 +32,10 @@ export default Body = () => {
             <div className="flex justify-between bg-purple-100">
                 <div className="flex justify-normal p-5">
                     <input type="text" placeholder="Search" className="border-lime-600" value={searchText} onChange={ (e) => setSearchText(e.target.value) }/>
+                    <button className="w-16 ml-5 bg-purple-950 hover:bg-purple-700 text-white text-center rounded" onClick={ () => { setFilteredRestaurantData(filterData(searchText, resData)) }}>Search</button>
+                </div>
+                <div className="flex justify-normal p-5">
+                    <input type="text" placeholder="Type here" className="border-lime-600" value={user.name} onChange={ (e) => setUser( { name: e.target.value, email: user.email } ) }/>
                     <button className="w-16 ml-5 bg-purple-950 hover:bg-purple-700 text-white text-center rounded" onClick={ () => { setFilteredRestaurantData(filterData(searchText, resData)) }}>Search</button>
                 </div>
                 <div className="p-5">

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
@@ -10,14 +10,23 @@ import ErrorComponent from "./components/ErrorComponent";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
+
 const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => {
+
+  const [user, setUser] = useState({
+    email: "dynamicUser@gmail.com",
+    name: "Dynamic User"
+  })
+
   return (
-    <div className="app">
-      <Header />  
-      <Outlet />    
-    </div>
+    <UserContext.Provider value = { { user: user, setUser: setUser} }>
+      <Header />
+      <input type="text" placeholder="COntext api checking" value={ user.name } onChange={ (e) => setUser( { name: e.target.value, email: user.email }) } />
+      <Outlet />
+    </UserContext.Provider>
   )
 }
 

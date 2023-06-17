@@ -1,10 +1,11 @@
 import { CDN_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 export default Header = () => {
     const [btnName, setBtnName] = useState("Login");
-    console.log(btnName);
+    const { user } = useContext(UserContext);
     return (
         <div className="flex justify-between bg-purple-100">
             <div className="logoContainer">
@@ -16,6 +17,7 @@ export default Header = () => {
                     <li className="px-4"><Link to={"/about"}>About Us</Link></li>
                     <li className="px-4"><Link to={"/contact"}>Contact</Link></li>
                     <li className="px-4"><Link to={"/instamart"}>Instamart</Link></li>
+                    <li className="px-4">{ user.name } - ({ user.email })</li>
                     <button className="login px-4" onClick={ () => btnName === "Login" ? setBtnName("Logout") : setBtnName("Login") }>{ btnName }</button>
                 </ul>
             </div>

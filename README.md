@@ -120,3 +120,18 @@
 10. Jo Dikhta hai wo bikta hai
     1. Material UI, ANT UI, Chakra UI, Tailwind, Styled components
     2. Square bracket notation
+
+11. Data is the new oil
+    1. Props drilling issue
+    2. Is modifying state of sibling component possible --- No not possible. Manage it in the parent (Also known as lifting the state up).
+    3. Use React DEV Tools. 
+        a. Components -- Gives details about props and states of the components
+        b. Profiler -- Records your flow on the app. (Tracks time taken by components to load etc.)
+    4. Passing data from child components to parent (Use event binding)
+    5. React Context
+        a. React provides a function to create context called createContext and a function to use context called useContext. [For functional components]
+        b. There can be multiple contexts.
+    6. Context is like a common state for your entire application
+    7. You can use contect wherever you want to.
+    8. Can we have multiple nested contexts
+    9. useContext is a hook, so use it inside the functional comopnent.
