@@ -10,7 +10,12 @@ import ErrorComponent from "./components/ErrorComponent";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
+import Cart from "./components/Cart";
+
 import UserContext from "./utils/UserContext";
+
+import { Provider } from "react-redux";
+import store from "./redux/store/store";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 
@@ -22,11 +27,15 @@ const AppLayout = () => {
   })
 
   return (
-    <UserContext.Provider value = { { user: user, setUser: setUser} }>
-      <Header />
-      <input type="text" placeholder="COntext api checking" value={ user.name } onChange={ (e) => setUser( { name: e.target.value, email: user.email }) } />
-      <Outlet />
-    </UserContext.Provider>
+    <Provider store = { store }>
+      <UserContext.Provider value = { { user: user, setUser: setUser} }>
+        <Header />
+        <div className="border border-cyan-800">
+          <input type="text" placeholder="COntext api checking" value={ user.name } onChange={ (e) => setUser( { name: e.target.value, email: user.email }) } />
+        </div>
+        <Outlet />
+      </UserContext.Provider>
+    </Provider>    
   )
 }
 
@@ -64,11 +73,14 @@ const appRouter = createBrowserRouter([
             <Instamart />
           </Suspense>
         )
+      },
+      {
+        path: "/cart",
+        element: <Cart />
       }
     ],
     errorElement: <ErrorComponent />
   }
-  
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -135,3 +135,13 @@
     7. You can use contect wherever you want to.
     8. Can we have multiple nested contexts
     9. useContext is a hook, so use it inside the functional comopnent.
+
+12. Lets build our store
+    1. REDUX TOOL KIT 
+    2. Redux store is like a xonext (central store) which any component can handle and access.
+    3. It is global
+    4. Only have 1 store.
+    5. We create multiple slices of our store.
+    6. we cannot directly modify the store. We do the modification by dispating actions
+    7. npm i @reduxjs/toolkit ------------ Core of redux
+    8. npm i react-redux  --------- Bridge between react and redux
