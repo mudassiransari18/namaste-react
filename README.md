@@ -145,3 +145,16 @@
     6. we cannot directly modify the store. We do the modification by dispating actions
     7. npm i @reduxjs/toolkit ------------ Core of redux
     8. npm i react-redux  --------- Bridge between react and redux
+
+13. Time for the test
+    1. Types of testing 
+        a. Manual Testing
+        b. Automation Testing
+        c. E2E Testing
+        d. Unit Testing 
+        e. Integration Testing
+    2. npm install --save-dev @testing-library/react
+    3. npm i jest
+    4. Configure jest using npx jest --init
+    5. Create test files
+    6. Configure babel. (npm install --save-dev babel-jest @babel/core @babel/preset-env)
